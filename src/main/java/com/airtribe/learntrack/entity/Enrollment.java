@@ -1,32 +1,25 @@
 package com.airtribe.learntrack.entity;
 
+import com.airtribe.learntrack.enums.EnrollmentStatus;
+
+import java.time.LocalDate;
+
 public class Enrollment {
 
     private Long id;
-
     private Long studentId;
-
     private Long courseId;
+    private LocalDate enrollmentDate;
+    private EnrollmentStatus status;
 
-    private String enrollementDate;
-
-    private boolean status;
-
-    // No-args Constructor
-    public Enrollment(){
-
-    }
-
-    // Parameterized Controller
-    public Enrollment(Long id, Long studentId, Long courseId, String enrollementDate, boolean status) {
+    public Enrollment(Long id, Long studentId, Long courseId) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;
-        this.enrollementDate = enrollementDate;
-        this.status = status;
+        this.enrollmentDate = LocalDate.now();
+        this.status = EnrollmentStatus.ACTIVE;
     }
 
-    // Adding Getter Methods
     public Long getId() {
         return id;
     }
@@ -39,34 +32,11 @@ public class Enrollment {
         return courseId;
     }
 
-    public String getEnrollementDate() {
-        return enrollementDate;
-    }
-
-    public boolean isStatus() {
+    public EnrollmentStatus getStatus() {
         return status;
     }
 
-    // Adding Setter Methods
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
-    }
-
-    public void setEnrollementDate(String enrollementDate) {
-        this.enrollementDate = enrollementDate;
-    }
-
-    public void setStatus(boolean status) {
+    public void setStatus(EnrollmentStatus status) {
         this.status = status;
     }
-
 }

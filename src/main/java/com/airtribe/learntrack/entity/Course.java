@@ -1,30 +1,23 @@
 package com.airtribe.learntrack.entity;
 
+import com.airtribe.learntrack.enums.CourseStatus;
+
 public class Course {
 
     private Long id;
-
     private String courseName;
-
     private String description;
+    private int durationInWeeks;
+    private CourseStatus status;
 
-    private Float durationInWeek;
-
-    private boolean status;
-
-    public Course() {
-    }
-
-    // Parameterized Controller
-    public Course(Long id, String courseName, String description, Float durationInWeek, boolean status) {
+    public Course(Long id, String courseName, String description, int durationInWeeks) {
         this.id = id;
         this.courseName = courseName;
         this.description = description;
-        this.durationInWeek = durationInWeek;
-        this.status = status;
+        this.durationInWeeks = durationInWeeks;
+        this.status = CourseStatus.ACTIVE;
     }
 
-    // Adding Getter Method
     public Long getId() {
         return id;
     }
@@ -33,38 +26,15 @@ public class Course {
         return courseName;
     }
 
-    public String getDescription() {
-        return description;
+    public int getDurationInWeeks() {
+        return durationInWeeks;
     }
 
-    public Float getDurationInWeek() {
-        return durationInWeek;
-    }
-
-    public boolean isStatus() {
+    public CourseStatus getStatus() {
         return status;
     }
 
-    // Adding Setter Method
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setDurationInWeek(Float durationInWeek) {
-        this.durationInWeek = durationInWeek;
-    }
-
-    public void setStatus(boolean status) {
+    public void setStatus(CourseStatus status) {
         this.status = status;
     }
-
-
 }

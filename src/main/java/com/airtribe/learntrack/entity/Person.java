@@ -3,12 +3,12 @@ package com.airtribe.learntrack.entity;
 public class Person {
 
     private Long id;
-
     private String firstName;
-
     private String lastName;
-
     private String email;
+
+    public Person() {
+    }
 
     public Person(Long id, String firstName, String lastName, String email) {
         this.id = id;
@@ -17,9 +17,9 @@ public class Person {
         this.email = email;
     }
 
-    // following method is for polymorphism
-    public String getDisplayName(){
-        return "Person Name is : " + firstName + " " + lastName + ("( ID : " + id + ")");
+    // Polymorphic method
+    public String getDisplayName() {
+        return firstName + " " + lastName + " (ID: " + id + ")";
     }
 
     public Long getId() {
@@ -53,8 +53,4 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public Person() {
-    }
-
 }
